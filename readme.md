@@ -5,7 +5,7 @@ This work © 2023 by murmurlab is licensed under CC BY-SA 4.0. To view a copy of
 
 INFO: dont touch [**testing/**](./testing/) folder!
 
-create a custom test file like test.c
+create a custom test file like example-minishell-test.c
 the test file must contain `void	test_main(void);` function
 
 ```c
