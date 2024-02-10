@@ -2,10 +2,11 @@
 
 ---
 
-## What is murmurtest (by ChatGPT)
+## What is murmurtest
 
 ### tr
 
+ChatGPT says:
 >MurmurTest: Yazılım Geliştirme Sürecinde Zaman Kazandıran Bir Test Aracı
 >
 >MurmurTest, yazılım geliştirme sürecinde zaman kazandıran ve işlevsellik
@@ -21,6 +22,7 @@
 
 ### en
 
+ChatGPT says:
 >MurmurTest: A Time-Saving Testing Tool in Software Development
 >
 >MurmurTest is a testing tool that saves time and facilitates functionality
