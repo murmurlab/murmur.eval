@@ -1,11 +1,15 @@
+# murmurtest
 
-This work © 2023 by murmurlab is licensed under CC BY-SA 4.0. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/
+## What is tester
+soon...
 
-# murmur.test
+## usage:
 
-INFO: dont touch [**testing/**](./testing/) folder!
+> INFO: dont touch [**testing/**](./testing/) folder!
+> Just include [**testing/incs/testing.h**](./testing/incs/testing.h)
+> and follow the instructions below
 
-create a custom test file like example-minishell-test.c
+Create a custom test file like example-minishell-test.c
 the test file must contain `void	test_main(void);` function
 
 ```c
@@ -247,11 +251,11 @@ typedef struct s_try
 
 to run:
 
-compile with
+- compile with
 
 > cxx [flags] -D TEST=1 *.c
 
-run macro
+- run macro
 
 ```c
 int main(void){
@@ -264,3 +268,5 @@ MURMURTEST;
 \
 example image:
 ![alt text](test.jpeg)
+
+This work © 2023 by murmurlab is licensed under CC BY-SA 4.0. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/
