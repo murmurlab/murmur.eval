@@ -1,9 +1,41 @@
 # murmurtest
 
-## What is tester
-soon...
+---
 
-## usage:
+## What is murmurtest (by ChatGPT)
+
+### tr
+
+>MurmurTest: Yazılım Geliştirme Sürecinde Zaman Kazandıran Bir Test Aracı
+>
+>MurmurTest, yazılım geliştirme sürecinde zaman kazandıran ve işlevsellik
+>kontrolünü kolaylaştıran bir test aracıdır. Her düzenlemede eski işlevlerin
+>bozulup bozulmadığını kontrol etmek için kullanılır. Özelleştirilebilir test
+>dosyalarıyla birlikte kolayca kullanılabilir, böylece testlerinizi düzenli ve
+>anlaşılır bir şekilde organize edebilirsiniz.
+>
+>Ayrıca, MurmurTest test hatalarını ayrıntılı bir şekilde yazdırma yeteneği sunar
+>ve testleri gruplama ve özelleştirilebilir kompleks test fonksiyonları yazma
+>imkanı sağlar. Bu sayede, her seferinde birçok test casesini el ile tekrar
+>deneme zahmetinden kurtarır.
+
+### en
+
+>MurmurTest: A Time-Saving Testing Tool in Software Development
+>
+>MurmurTest is a testing tool that saves time and facilitates functionality
+>checks in software development. It is used to ensure whether previous
+>functionalities are still intact with each edit. With customizable test files,
+>it's easy to use and allows for organized and understandable test structuring.
+>
+>Moreover, MurmurTest provides the ability to print detailed test errors and
+>allows for grouping tests and writing customizable complex test functions. This
+>feature not only enhances understanding of test results but also saves you from
+>the hassle of manually retesting numerous test cases each time.
+
+---
+
+# Usage:
 
 > INFO: dont touch [**testing/**](./testing/) folder!
 > Just include [**testing/incs/testing.h**](./testing/incs/testing.h)
@@ -264,9 +296,10 @@ MURMURTEST;
 	// code
 }
 ```
+---
 
-\
-example image:
+### example image:
+
 ![alt text](test.jpeg)
 
 This work © 2023 by murmurlab is licensed under CC BY-SA 4.0. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/
