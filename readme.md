@@ -22,13 +22,13 @@ t_try	*trys[] =
 		// create test group
 		(t_try [])
 		{
-            {
+			{
 				// this is not test case, this is fake test case like test-head
 				// you should put it here the test funcs 
 				// .try is test and result funcs, .expected is test name
-                .try = &(t_fun){complex_len_test, complex_len_test_ko, complex_len_test_ok},
-                .expected = "complex len test",
-            },
+				.try = &(t_fun){complex_len_test, complex_len_test_ko, complex_len_test_ok},
+				.expected = "complex len test",
+			},
 			{
 				.try = "\"a$a99-$a\"",
 				.expected = (void *)6,
@@ -50,27 +50,27 @@ t_try	*trys[] =
 		// create another test group
 		(t_try [])
 		{
-            {
-                .try = &(t_fun){expand_test, expand_test_ko, expand_test_ok},
-                .expected = "dquote test",
-            },
-            {
-                .try = "\"-$a$a$a\"",
-                .expected = &(void *[3]){
-                    "-"VAR VAR VAR,
-                    (void *)9,
-                    (void *)(1 + (VAR_LEN * 3))
-                }
-            },
-            {
-                .try = "\"$a-$a\"",
-                .expected = &(void *[3]){
-                    VAR"-"VAR,
-                    (void *)7,
-                    (void *)(VAR_LEN + 1 + VAR_LEN)
-                }
-            },
-            {.try = NULL, .expected = NULL}
+			{
+				.try = &(t_fun){expand_test, expand_test_ko, expand_test_ok},
+				.expected = "dquote test",
+			},
+			{
+				.try = "\"-$a$a$a\"",
+				.expected = &(void *[3]){
+					"-"VAR VAR VAR,
+					(void *)9,
+					(void *)(1 + (VAR_LEN * 3))
+				}
+			},
+			{
+				.try = "\"$a-$a\"",
+				.expected = &(void *[3]){
+					VAR"-"VAR,
+					(void *)7,
+					(void *)(VAR_LEN + 1 + VAR_LEN)
+				}
+			},
+			{.try = NULL, .expected = NULL}
 		},
 
 		// create another test group
@@ -95,9 +95,9 @@ t_try	*trys[] =
 		},
 
 		// create another test group
-        (t_try [])
-        {
-            {
+		(t_try [])
+		{
+			{
 				.try = &(t_fun){all_len_test, all_len_test_ko, all_len_test_ok},
 				.expected = "all len test",
 			},
@@ -105,16 +105,16 @@ t_try	*trys[] =
 				.try = "$d\"aaaa\"$a$b$c'xxxx'",
 				.expected = (void *)30,
 			},
-            {
+			{
 				.try = NULL,
 				.expected = NULL,
 			}
-        },
+		},
 
 		// create another test group
-        (t_try [])
-        {			
-            {
+		(t_try [])
+		{			
+			{
 				.try = &(t_fun){parser_test, parser_test_ko, parser_test_ok},
 				.expected = "join all2 test",
 			},
@@ -129,11 +129,11 @@ t_try	*trys[] =
 					NULL
 				}
 			},
-            {
+			{
 				.try = NULL,
 				.expected = NULL,
 			}
-        },
+		},
 
 		NULL,
 	};
@@ -162,7 +162,7 @@ void	complex_len_test_ko(t_test *test)
 	try = test->current_test->trys;
 	char    *result[2] = {GREEN"[OK]"RESET, RED"[KO]"RESET};
 	printf("=============== %s ============\n", test->current_test->name);
-    printf("try		[ %s ]\n", (char *)try->try);
+	printf("try		[ %s ]\n", (char *)try->try);
 	printf(YELLOW"your		[ %zu ]\n"RESET, (size_t)(try->result));
 	printf("expected	[ %zu ]\n", (size_t)(try->expected));
 	printf("^^^^^^^^=========TEST %zu=%s================\n\n\n", test->test_number, result[1]);
@@ -177,7 +177,7 @@ void	expand_test_ko(t_test *test)
 	try = test->current_test->trys;
 	char    *result[2] = {GREEN"[OK]"RESET, RED"[KO]"RESET};
 	printf("================ %s ================\n", test->current_test->name);
-    printf("try		[ %s ]\n", (char *)try->try);
+	printf("try		[ %s ]\n", (char *)try->try);
 	if (try->err_bit & 1)
 		printf(YELLOW"your		[ %s ]\n"RESET, (char *)((void **)try->result)[0]);
 	printf("expected	[ %s ]\n\n", (char *)((void **)try->expected)[0]);
@@ -231,18 +231,18 @@ typedef struct s_try
 
 ### test
 ```c
-    // initialize test
+	// initialize test
 	// pass test struct and test cases
-    init_test(&test, trys);
+	init_test(&test, trys);
 
-    // call each tests in test groups
-    for (size_t j = 0; (size_t)trys[j]; j++)
-    {
-        for (size_t i = 0; (size_t)trys[j][i + 1].try; i++)
-            tester(j, i, &test);
-    }
+	// call each tests in test groups
+	for (size_t j = 0; (size_t)trys[j]; j++)
+	{
+		for (size_t i = 0; (size_t)trys[j][i + 1].try; i++)
+			tester(j, i, &test);
+	}
 	printf("fails: %i\n", ft_lstsize(test.fails));
-    exit(0);
+	exit(0);
 ```
 
 to run:
@@ -255,9 +255,9 @@ run macro
 
 ```c
 int main(void){
-    // code
+	// code
 MURMURTEST;
-    // code
+	// code
 }
 ```
 
