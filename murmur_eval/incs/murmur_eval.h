@@ -17,7 +17,7 @@ void				test_main(void);
 
 # define MURMURTEST if(TEST){test_main();}
 
-# define CURR_TEST ((t_try *)test->current_test->trys)
+# define CURR_TEST(PARAM_t_test) ((t_try *)PARAM_t_test->current_test->trys)
 
 
 # define EVAL_INIT(T_TEST, T_TRY) \

@@ -54,24 +54,24 @@ void	test_main()
 }
 int		ft_strlen_test(t_test *test)
 {
-	CURR_TEST->result = strlen(CURR_TEST->try);
-	if (CURR_TEST->result == CURR_TEST->expected)
+	CURR_TEST(test)->result = strlen(CURR_TEST(test)->try);
+	if (CURR_TEST(test)->result == CURR_TEST(test)->expected)
 		return (1);
 	return (0);
 }
 void	ft_strlen_test_ko(t_test *test)
 {
 	printf("=============== %s ============\n", test->current_test->name);
-	printf("try		[ %s ]\n", (char *)CURR_TEST->try);
-	printf(YELLOW"your		[ %zu ]\n"RESET, (size_t)(CURR_TEST->result));
-	printf("expected	[ %zu ]\n", (size_t)(CURR_TEST->expected));
+	printf("try		[ %s ]\n", (char *)CURR_TEST(test)->try);
+	printf(YELLOW"your		[ %zu ]\n"RESET, (size_t)(CURR_TEST(test)->result));
+	printf("expected	[ %zu ]\n", (size_t)(CURR_TEST(test)->expected));
 	printf("^^^^^^^^=========TEST %zu=%s================\n\n\n", test->test_number, __result_eval[1]);
 }
 void	ft_strlen_test_ok(t_test *test)
 {
 	printf("=============== %s ================\n", test->current_test->name);
-    printf("try         	[ %s ]\n", (char *)CURR_TEST->try);
-    printf(GREEN"expected	[ %zu ]\n"RESET, (size_t)(CURR_TEST->expected));
+    printf("try         	[ %s ]\n", (char *)CURR_TEST(test)->try);
+    printf(GREEN"expected	[ %zu ]\n"RESET, (size_t)(CURR_TEST(test)->expected));
 	printf("=================TEST %zu=%s================\n\n\n", test->test_number, __result_eval[0]);
 }
 
