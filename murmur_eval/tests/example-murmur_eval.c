@@ -1,0 +1,102 @@
+#include "murmur_eval.h"
+#include <string.h>
+#include <stdio.h>
+
+int	ft_lstsize(struct s_list *lst);
+
+int		ft_strlen_test(t_test *test);
+void	ft_strlen_test_ko(t_test *test);
+void	ft_strlen_test_ok(t_test *test);
+
+void	*get_my_data(void)
+{
+	return (NULL);
+}
+
+void	test_main()
+{
+    NEW_TEST_RUNNER(1)
+	GET_TEST_RUNNER(1).my_data = get_my_data();
+
+	NEW_TEST(1)
+        NEW_GROUP("ft_strlen test", ft_strlen_test, ft_strlen_test_ko, ft_strlen_test_ok)
+            {
+                CASE = "ahmet",
+                EXPECTED = 5
+            },
+            {
+                CASE = "1234567",
+                EXPECTED = 7
+            },
+        END_GROUP
+        NEW_GROUP("ft_strlen test2", ft_strlen_test, ft_strlen_test_ko, ft_strlen_test_ok)
+            {
+                CASE = "111",
+                EXPECTED = 3333
+            },
+            {
+                CASE = "3333",
+                EXPECTED = 44
+            },
+        END_GROUP
+    END_TEST
+
+	EVAL_INIT(GET_TEST_RUNNER(1), GET_TEST(1))
+
+	EVAL_ALL(GET_TEST_RUNNER(1), GET_TEST(1))
+
+	// EVAL_GROUP(GET_TEST_RUNNER(1), GET_TEST(1), 0)
+
+	// EVAL_TEST(GET_TEST_RUNNER(1), 0, 0)
+
+	EVAL_FAILS(GET_TEST_RUNNER(1))
+
+}
+int		ft_strlen_test(t_test *test)
+{
+	t_try	*try;
+
+	try = test->current_test->trys;
+	try->result = strlen(try->try);
+	if (try->result == try->expected)
+		return (1);
+	return (0);
+}
+void	ft_strlen_test_ko(t_test *test)
+{
+	t_try	*try;
+
+	try = test->current_test->trys;
+	char    *result[2] = {GREEN"[OK]"RESET, RED"[KO]"RESET};
+	printf("=============== %s ============\n", test->current_test->name);
+	printf("try		[ %s ]\n", (char *)try->try);
+	printf(YELLOW"your		[ %zu ]\n"RESET, (size_t)(try->result));
+	printf("expected	[ %zu ]\n", (size_t)(try->expected));
+	printf("^^^^^^^^=========TEST %zu=%s================\n\n\n", test->test_number, result[1]);
+}
+void	ft_strlen_test_ok(t_test *test)
+{
+	t_try	*try;
+
+	try = test->current_test->trys;
+	char    *result[2] = {GREEN"[OK]"RESET, RED"[KO]"RESET};
+	printf("=============== %s ================\n", test->current_test->name);
+    printf("try         	[ %s ]\n", (char *)try->try);
+    printf(GREEN"expected	[ %zu ]\n"RESET, (size_t)(try->expected));
+	printf("=================TEST %zu=%s================\n\n\n", test->test_number, result[0]);
+}
+
+
+
+int	ft_lstsize(struct s_list *lst)
+{
+	size_t	i;
+
+	i = 0;
+	while (lst)
+	{
+		lst = lst->next;
+		i++;
+	}
+	return (i);
+}

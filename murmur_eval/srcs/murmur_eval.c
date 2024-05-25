@@ -1,4 +1,56 @@
-#include "testing.h"
+#include "murmur_eval.h"
+
+// static int	ft_lstsize(t_list *lst)
+// {
+// 	size_t	i;
+
+// 	i = 0;
+// 	while (lst)
+// 	{
+// 		lst = lst->next;
+// 		i++;
+// 	}
+// 	return (i);
+// }
+
+t_list	*ft_lstnew(void *content)
+{
+	t_list	*elt;
+
+	elt = (t_list *)malloc(sizeof(t_list));
+	if (elt == NULL)
+		return (NULL);
+	elt->content = content;
+	elt->next = NULL;
+	return (elt);
+}
+
+t_list	*ft_lstlast(t_list *lst)
+{
+	while (lst)
+	{
+		if (!lst->next)
+			return (lst);
+		lst = lst->next;
+	}
+	return (lst);
+}
+void	ft_lstadd_back(t_list **alst, t_list *new)
+{
+	t_list	*last;
+
+	if (alst)
+	{
+		if (*alst)
+		{
+			last = ft_lstlast(*alst);
+			last->next = new;
+		}
+		else
+			*alst = new;
+	}
+}
+
 
 void    init_test(t_test *test, t_try *trys[])
 {
