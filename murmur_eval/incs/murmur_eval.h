@@ -21,6 +21,7 @@ void	test_main(void);
 # define EVAL_TEST(T_TEST, GROUP_NUM, TEST_NUM) tester(GROUP_NUM, TEST_NUM, &T_TEST);
 
 # define EVAL_GROUP(T_TEST, T_TRY, GROUP_NUM) \
+	printf("\n\n\n%s\n\n", T_TRY[GROUP_NUM][0].expected); \
 	for (size_t i = 0; (size_t)T_TRY[GROUP_NUM][i + 1].try; i++) \
 		EVAL_TEST(T_TEST, GROUP_NUM, i)
 
