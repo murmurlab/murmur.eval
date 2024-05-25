@@ -105,7 +105,6 @@ endif
 test = 0
 ifeq '$(test)' '1'
 CFLAGS += -D TEST=$(test)
-./$(attest) .
 endif
 
 all: $(DEPENDENCIES)
