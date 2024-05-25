@@ -20,24 +20,24 @@ void	test_main()
 
 	NEW_TEST(1)
         NEW_GROUP("ft_strlen test", ft_strlen_test, ft_strlen_test_ko, ft_strlen_test_ok)
-            {
-                CASE = "ahmet",
-                EXPECTED = 5
-            },
-            {
-                CASE = "1234567",
-                EXPECTED = 7
-            },
+		{
+			CASE = "ahmet",
+			EXPECTED = 5
+		},
+		{
+			CASE = "1234567",
+			EXPECTED = 7
+		},
         END_GROUP
         NEW_GROUP("ft_strlen test2", ft_strlen_test, ft_strlen_test_ko, ft_strlen_test_ok)
-            {
-                CASE = "111",
-                EXPECTED = 3333
-            },
-            {
-                CASE = "3333",
-                EXPECTED = 44
-            },
+		{
+			CASE = "111",
+			EXPECTED = 3333
+		},
+		{
+			CASE = "3333",
+			EXPECTED = 44
+		},
         END_GROUP
     END_TEST
 
