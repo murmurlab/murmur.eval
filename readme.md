@@ -148,6 +148,7 @@ _complex funcs [example](#complex-funcs)*_
 ```
 
 #### !!! [_EXAMPLE FILE_](./murmur_eval/tests/example-murmur_eval.c) !!!
+![alt text](excode.png)
 
 # to run:
 
@@ -209,7 +210,7 @@ typedef struct s_try
 
 ### example image:
 
-![alt text](test.jpeg)
+![alt text](stdout.png)
 
 \
 \
