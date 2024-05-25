@@ -83,11 +83,11 @@ void				test_main(void);
 
 struct s_tests;
 
-typedef struct s_list
+typedef struct s_link_list
 {
 	void			*content;
-	struct s_list	*next;
-}	t_list;
+	struct s_link_list	*next;
+}	t_link_list;
 
 typedef struct s_test
 {
@@ -95,8 +95,8 @@ typedef struct s_test
 	size_t			test_group_num;
 
 	struct s_tests	*current_test;
-	struct s_list	*fails;
-	struct s_list	*success;
+	struct s_link_list	*fails;
+	struct s_link_list	*success;
 	void			(*ko_msg)(struct s_test *test);
 	void			(*ok_msg)(struct s_test *test);
 
@@ -132,10 +132,10 @@ typedef struct s_fun
 	void	*ok_msg;
 }				t_fun;
 
-// int	ft_lstsize(struct s_list *lst);
-// struct s_list	*ft_lstnew(void *content);
-// struct s_list	*ft_lstlast(struct s_list *lst);
-// void	ft_lstadd_back(struct s_list **alst, struct s_list *new);
+// int	ft_lstsize(struct s_link_list *lst);
+// struct s_link_list	*ft_lstnew(void *content);
+// struct s_link_list	*ft_lstlast(struct s_link_list *lst);
+// void	ft_lstadd_back(struct s_link_list **alst, struct s_link_list *new);
 
 void    init_test(t_test *test, t_try *trys[]);
 void	tester(int test_group_num, int test_num, t_test *test);

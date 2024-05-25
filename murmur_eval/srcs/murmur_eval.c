@@ -1,6 +1,6 @@
 #include "murmur_eval.h"
 
-// static int	ft_lstsize(t_list *lst)
+// static int	ft_lstsize(t_link_list *lst)
 // {
 // 	size_t	i;
 
@@ -15,11 +15,11 @@
 
 char    *__result_eval[2] = {GREEN"[OK]"RESET, RED"[KO]"RESET};
 
-t_list	*ft_lstnew(void *content)
+t_link_list	*ft_lstnew(void *content)
 {
-	t_list	*elt;
+	t_link_list	*elt;
 
-	elt = (t_list *)malloc(sizeof(t_list));
+	elt = (t_link_list *)malloc(sizeof(t_link_list));
 	if (elt == NULL)
 		return (NULL);
 	elt->content = content;
@@ -27,7 +27,7 @@ t_list	*ft_lstnew(void *content)
 	return (elt);
 }
 
-t_list	*ft_lstlast(t_list *lst)
+t_link_list	*ft_lstlast(t_link_list *lst)
 {
 	while (lst)
 	{
@@ -37,9 +37,9 @@ t_list	*ft_lstlast(t_list *lst)
 	}
 	return (lst);
 }
-void	ft_lstadd_back(t_list **alst, t_list *new)
+void	ft_lstadd_back(t_link_list **alst, t_link_list *new)
 {
-	t_list	*last;
+	t_link_list	*last;
 
 	if (alst)
 	{
