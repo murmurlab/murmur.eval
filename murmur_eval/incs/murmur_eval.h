@@ -12,8 +12,13 @@
 #  define TEST 0
 # endif
 
-void	test_main(void);
+extern char			*__result_eval[2];
+void				test_main(void);
+
 # define MURMURTEST if(TEST){test_main();}
+
+# define CURR_TEST ((t_try *)test->current_test->trys)
+
 
 # define EVAL_INIT(T_TEST, T_TRY) \
 	init_test(&T_TEST, T_TRY);
@@ -68,6 +73,7 @@ void	test_main(void);
 		.expected = NULL, \
 	} \
 	},
+
 
 # define RED "\x1B[31m"
 # define GREEN "\x1B[32m"

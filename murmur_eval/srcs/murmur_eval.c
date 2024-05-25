@@ -13,6 +13,8 @@
 // 	return (i);
 // }
 
+char    *__result_eval[2] = {GREEN"[OK]"RESET, RED"[KO]"RESET};
+
 t_list	*ft_lstnew(void *content)
 {
 	t_list	*elt;

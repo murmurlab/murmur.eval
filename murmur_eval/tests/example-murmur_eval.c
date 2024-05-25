@@ -2,7 +2,7 @@
 #include <string.h>
 #include <stdio.h>
 
-int	ft_lstsize(struct s_list *lst);
+int		ft_lstsize(struct s_list *lst);
 
 int		ft_strlen_test(t_test *test);
 void	ft_strlen_test_ko(t_test *test);
@@ -54,36 +54,25 @@ void	test_main()
 }
 int		ft_strlen_test(t_test *test)
 {
-	t_try	*try;
-
-	try = test->current_test->trys;
-	try->result = strlen(try->try);
-	if (try->result == try->expected)
+	CURR_TEST->result = strlen(CURR_TEST->try);
+	if (CURR_TEST->result == CURR_TEST->expected)
 		return (1);
 	return (0);
 }
 void	ft_strlen_test_ko(t_test *test)
 {
-	t_try	*try;
-
-	try = test->current_test->trys;
-	char    *result[2] = {GREEN"[OK]"RESET, RED"[KO]"RESET};
 	printf("=============== %s ============\n", test->current_test->name);
-	printf("try		[ %s ]\n", (char *)try->try);
-	printf(YELLOW"your		[ %zu ]\n"RESET, (size_t)(try->result));
-	printf("expected	[ %zu ]\n", (size_t)(try->expected));
-	printf("^^^^^^^^=========TEST %zu=%s================\n\n\n", test->test_number, result[1]);
+	printf("try		[ %s ]\n", (char *)CURR_TEST->try);
+	printf(YELLOW"your		[ %zu ]\n"RESET, (size_t)(CURR_TEST->result));
+	printf("expected	[ %zu ]\n", (size_t)(CURR_TEST->expected));
+	printf("^^^^^^^^=========TEST %zu=%s================\n\n\n", test->test_number, __result_eval[1]);
 }
 void	ft_strlen_test_ok(t_test *test)
 {
-	t_try	*try;
-
-	try = test->current_test->trys;
-	char    *result[2] = {GREEN"[OK]"RESET, RED"[KO]"RESET};
 	printf("=============== %s ================\n", test->current_test->name);
-    printf("try         	[ %s ]\n", (char *)try->try);
-    printf(GREEN"expected	[ %zu ]\n"RESET, (size_t)(try->expected));
-	printf("=================TEST %zu=%s================\n\n\n", test->test_number, result[0]);
+    printf("try         	[ %s ]\n", (char *)CURR_TEST->try);
+    printf(GREEN"expected	[ %zu ]\n"RESET, (size_t)(CURR_TEST->expected));
+	printf("=================TEST %zu=%s================\n\n\n", test->test_number, __result_eval[0]);
 }
 
 
