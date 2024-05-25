@@ -2,7 +2,7 @@
 #include <string.h>
 #include <stdio.h>
 
-int		ft_lstsize(struct s_link_list *lst);
+static int		ft_lstsize(struct s_link_list *lst);
 
 int		ft_strlen_test(t_test *test);
 void	ft_strlen_test_ko(t_test *test);
@@ -77,7 +77,7 @@ void	ft_strlen_test_ok(t_test *test)
 
 
 
-int	ft_lstsize(struct s_link_list *lst)
+static int	ft_lstsize(struct s_link_list *lst)
 {
 	size_t	i;
 
