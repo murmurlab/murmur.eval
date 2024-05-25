@@ -1,21 +1,21 @@
-# murmurtest
+# murmur_eval
 
 ---
 
-## What is murmurtest
+## What is murmur_eval
 
 ### tr
 
 ChatGPT says:
->MurmurTest: Yazılım Geliştirme Sürecinde Zaman Kazandıran Bir Test Aracı
+>murmur_eval: Yazılım Geliştirme Sürecinde Zaman Kazandıran Bir Test Aracı
 >
->MurmurTest, yazılım geliştirme sürecinde zaman kazandıran ve işlevsellik
+>murmur_eval, yazılım geliştirme sürecinde zaman kazandıran ve işlevsellik
 >kontrolünü kolaylaştıran bir test aracıdır. Her düzenlemede eski işlevlerin
 >bozulup bozulmadığını kontrol etmek için kullanılır. Özelleştirilebilir test
 >dosyalarıyla birlikte kolayca kullanılabilir, böylece testlerinizi düzenli ve
 >anlaşılır bir şekilde organize edebilirsiniz.
 >
->Ayrıca, MurmurTest test hatalarını ayrıntılı bir şekilde yazdırma yeteneği sunar
+>Ayrıca, murmur_eval test hatalarını ayrıntılı bir şekilde yazdırma yeteneği sunar
 >ve testleri gruplama ve özelleştirilebilir kompleks test fonksiyonları yazma
 >imkanı sağlar. Bu sayede, her seferinde birçok test casesini el ile tekrar
 >deneme zahmetinden kurtarır.
@@ -23,14 +23,14 @@ ChatGPT says:
 ### en
 
 ChatGPT says:
->MurmurTest: A Time-Saving Testing Tool in Software Development
+>murmur_eval: A Time-Saving Testing Tool in Software Development
 >
->MurmurTest is a testing tool that saves time and facilitates functionality
+>murmur_eval is a testing tool that saves time and facilitates functionality
 >checks in software development. It is used to ensure whether previous
 >functionalities are still intact with each edit. With customizable test files,
 >it's easy to use and allows for organized and understandable test structuring.
 >
->Moreover, MurmurTest provides the ability to print detailed test errors and
+>Moreover, murmur_eval provides the ability to print detailed test errors and
 >allows for grouping tests and writing customizable complex test functions. This
 >feature not only enhances understanding of test results but also saves you from
 >the hassle of manually retesting numerous test cases each time.
