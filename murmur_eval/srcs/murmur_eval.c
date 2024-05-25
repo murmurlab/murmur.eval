@@ -15,7 +15,7 @@
 
 char    *__result_eval[2] = {GREEN"[OK]"RESET, RED"[KO]"RESET};
 
-t_link_list	*ft_lstnew(void *content)
+static t_link_list	*ft_lstnew(void *content)
 {
 	t_link_list	*elt;
 
@@ -27,7 +27,7 @@ t_link_list	*ft_lstnew(void *content)
 	return (elt);
 }
 
-t_link_list	*ft_lstlast(t_link_list *lst)
+static t_link_list	*ft_lstlast(t_link_list *lst)
 {
 	while (lst)
 	{
@@ -37,7 +37,7 @@ t_link_list	*ft_lstlast(t_link_list *lst)
 	}
 	return (lst);
 }
-void	ft_lstadd_back(t_link_list **alst, t_link_list *new)
+static void	ft_lstadd_back(t_link_list **alst, t_link_list *new)
 {
 	t_link_list	*last;
 
