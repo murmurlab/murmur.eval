@@ -59,8 +59,7 @@ void    init_test(t_test *test, t_try *trys[])
     size_t x;
     size_t y;
 
-    for (x = 0; trys[x]; x++)
-        ;
+    for (x = 0; trys[x]; x++);
 	test->tests = malloc(x * sizeof(void *));
     for (x = 0; trys[x]; x++)
     {
